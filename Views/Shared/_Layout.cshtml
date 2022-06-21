@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Copa America </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-image:url(https://assets-production.applicaster.com/static/copa_america/images/footer-bg.png)">
+  <a class="navbar-brand" href='@Url.Action("index.cshtml ","HomeController")'><img class="logo" src="/imagenes/logoCopaAmerica.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <p style="text-align= center"><h2 class="slogan"></h2></p>
+      <li class="nav-item active">
+        <a class="nav-link pt-5 " id="letraNav" href='@Url.Action("Sedes","Home")'>Sedes <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link pt-5" id="letraNav" href='@Url.Action("UltimosCampeones","Home")'>Ultimos Campeones <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link pt-5" id="letraNav" href='@Url.Action("VerEquipos","Equipos")'>Equipos <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-image:url(https://assets-production.applicaster.com/static/copa_america/images/footer-bg.png)">
+        <div class="container-fluid">
+            &copy; 2021 - TP6_Raijel_Marini - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
